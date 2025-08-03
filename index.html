@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gestor de Pagos</title>
+  <link rel="stylesheet" href="css.css" />
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+  <div class="container">
+    <h1>Gestor de Pagos</h1>
+    <form id="factura-form">
+      <input type="text" id="nombre" placeholder="Nombre del producto o tienda" required />
+      <input type="date" id="fecha" required />
+      <button type="submit">Agregar</button>
+    </form>
+
+    <div id="facturas"></div>
+  </div>
+
+  <script src="js.js"></script>
+  <script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('js2.js')
+      .then(() => console.log('Service Worker registrado'))
+      .catch(error => console.log('Error al registrar el SW:', error));
+  }
+</script>
+</body>
+</html>
